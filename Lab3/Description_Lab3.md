@@ -53,4 +53,31 @@ brk() перемещает эту границу вперед/назад, что
 операивной памяти процессами в системе. `pmap -d PID`
 
 ### №2
-**[memory-user.c]()**
+**[memory-user.c](https://github.com/aLLnext/OS_labs/blob/master/Lab3/memory-user.c)**
+
+### №3
+`run free`
+
+![free](https://i.ibb.co/rwJLM1B/Screenshot-20200325-193739.png)
+
+`run memory-user.c`
+
+запускаем `free` во время исполнения `memory-user.c`
+
+![free](https://i.ibb.co/KWwJMkQ/Screenshot-20200325-194201.png)\
+
+`run pmap PID`
+
+![pmap](https://i.ibb.co/0CPyFWW/Screenshot-20200325-194707.png)
+
+`run memory-user.c` with 10 GB
+
+`run free` 
+
+![free](https://i.ibb.co/X3bZS0K/Screenshot-20200325-200307.png)
+
+`run pmap PID`
+
+![free](https://i.ibb.co/3YnJ595/Screenshot-20200325-200545.png)
+
+
