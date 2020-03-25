@@ -5,10 +5,9 @@
 #include <stdlib.h>
 
 static void task2(long bytes) {
-  int *array;
-  array = (int *)malloc(bytes);
+  int *array = (int *)malloc(bytes); //выделяем динамически память под массив int
   while (1) {
-    for (int i = 0; i < bytes / sizeof(int); ++i) {
+    for (int i = 0; i < bytes / sizeof(int); ++i) { //бесконечный цикл по элементам
       array[i] = random() % 1000;
     }
   }

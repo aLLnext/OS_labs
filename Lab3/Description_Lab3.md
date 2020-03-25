@@ -55,7 +55,7 @@ brk() перемещает эту границу вперед/назад, что
 ### №2
 **[memory-user.c](https://github.com/aLLnext/OS_labs/blob/master/Lab3/memory-user.c)**
 
-### №3
+### №3, №4
 `run free`
 
 ![free](https://i.ibb.co/rwJLM1B/Screenshot-20200325-193739.png)
@@ -80,4 +80,11 @@ brk() перемещает эту границу вперед/назад, что
 
 ![free](https://i.ibb.co/3YnJ595/Screenshot-20200325-200545.png)
 
+`run kill PID`
 
+`run free`
+
+![free](https://i.ibb.co/HNdcPcy/Screenshot-20200325-202452.png)
+
+После выполнения команды kill проиходит завершение процесса и память освобождается. 
+Что мы и видим на приложенных скиншотах.
