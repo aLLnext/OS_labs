@@ -5,3 +5,4 @@ set(CMAKE_C_STANDARD 11)
 
 
 add_subdirectory(Lab2)
+add_subdirectory(Lab3)
