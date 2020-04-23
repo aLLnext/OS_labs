@@ -53,7 +53,7 @@ brk() перемещает эту границу вперед/назад, что
 операивной памяти процессами в системе. `pmap -d PID`
 
 ### №2
-**[memory-user.c](https://github.com/aLLnext/OS_labs/blob/master/Lab3/memory-user.c)**
+**[memory-user.c](https://github.com/sapiest/OS_labs/blob/master/Lab3/memory-user.c)**
 
 ### №3, №4
 `run free`
