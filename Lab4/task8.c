@@ -5,8 +5,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static void task8(){
+int main(){
   int *data = malloc(100 * sizeof(int));
+  data[1] = 1;
   free(data);
   printf("%i", data[1]);
 }

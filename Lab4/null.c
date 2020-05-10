@@ -6,7 +6,7 @@
 #include <stdio.h>
 
 //to run rename to main
-int null() {
+static int null() {
   int *p = NULL;
   int i = *p;
   printf("%i", i);
