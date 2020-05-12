@@ -1,0 +1,14 @@
+There are several things I discovered when implementing a simple test app that works with the algorithm:
+
+    The calculation is triggered by calling the function HillClimbingInstance.Update(currentThreadCount, sampleDuration, numCompletions, &threadAdjustmentInterval) and the return value is the new maximum thread count that the algorithm is proposing.
+    It calculates the desired number of threads based on the current throughput, which is the # of tasks completed (numCompletions) during the current time-period (sampleDuration in seconds).
+    It also takes the current thread count (currentThreadCount) into consideration.
+    The core calculations (excluding error handling and house-keeping) are only just over 100 LOC, so it's not too hard to follow.
+    It works on the basis of transitions (HillClimbingStateTransition), first Warmup, then Stabilizing and will only recommend a new value once it's moved into the ClimbingMove state.
+    The real .NET Thread Pool only increases the thread-count by one thread every 500 milliseconds. It keeps doing this until the # of threads has reached the amount that the hill-climbing algorithm suggests. See ThreadpoolMgr::ShouldAdjustMaxWorkersActive() and ThreadpoolMgr::AdjustMaxWorkersActive() for the code that handles this.
+    If it hasn't got enough samples to do a statistically significant calculation, this algorithm will indicate this via the threadAdjustmentInterval variable. This means that you should not call HillClimbingInstance.Update(..) until another threadAdjustmentInterval milliseconds have elapsed. (link to source code that calculates this)
+    The current thread count is only decreased when threads complete their current task. At that point, the current count is compared to the desired amount and if necessary a thread is retired
+    The algorithm with only return values that respect the limits specified by ThreadPool.SetMinThreads(..) and ThreadPool.SetMaxThreads(..) (link to the code that handles this)
+    In addition, it will only recommend increasing the thread count if the CPU Utilization is below 95%
+
+First, let's look at the graphs that were published in the research paper from Microsoft (Optimizing Concurrency Levels in the .NET ThreadPool):
