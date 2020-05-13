@@ -7,6 +7,7 @@
 #include "task2_check-fletcher.c"
 #include "task3_crc.c"
 #include "task5_create-csum.c"
+#include "task5_check-csum.c"
 
 static struct timeval tv1, tv2, dtv;
 
@@ -34,4 +35,7 @@ int main(){
   task2();
   printf("Crc\n");
   task3();
+  printf("crc 8 bit\n");
+  task5();
+  task5_check();
 }
