@@ -28,6 +28,7 @@ static int task3(int argc, char *argv[]){
   //проверка количества аргументов
   if (argc != 3) {
     fprintf(stderr, "Format: mytail -<n> <filename>\n");
+
     return EXIT_FAILURE;
   }
 
@@ -35,6 +36,7 @@ static int task3(int argc, char *argv[]){
   int n = atoi(argv[1] + 1);
   if (n < 0) {
     fprintf(stderr, "n can't be < 0\n");
+
     return EXIT_FAILURE;
   }
 
@@ -43,6 +45,7 @@ static int task3(int argc, char *argv[]){
 
   if ((fd = open(file_name, O_RDONLY)) < 0) {
     fprintf(stderr, "File's not open\n");
+
     return EXIT_FAILURE;
   }
   //получаем описание нашего файла
@@ -59,6 +62,7 @@ static int task3(int argc, char *argv[]){
   //если требуется вывести все строки - выводит буфер
   if (lines <= n) {
     printf("%s\n", buf);
+
     return EXIT_SUCCESS;
   }
 
@@ -71,6 +75,7 @@ static int task3(int argc, char *argv[]){
       char ans[size - i];
       strcpy(ans, (buf + (i + 1)));
       printf("%s\n", ans);
+
       return EXIT_SUCCESS;
     }
   }

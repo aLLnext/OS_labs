@@ -29,12 +29,12 @@ double end_timer() {
 }
 
 int main(){
-  printf("XOR\n");
-  task1();
-  printf("Fletcher\n");
-  task2();
-  printf("Crc\n");
-  task3();
+//  printf("XOR\n");
+//  task1();
+//  printf("Fletcher\n");
+//  task2();
+//  printf("Crc\n");
+//  task3();
   printf("crc 8 bit\n");
   task5();
   task5_check();

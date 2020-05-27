@@ -1,12 +1,10 @@
 //
 // Created by sapiest on 10.05.2020.
 //
-#include <bits/time.h>
+
 #include <fcntl.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <sys/stat.h>
-#include <sys/time.h>
 #include <zconf.h>
 
 static const char *file_name = "task2_file.txt";

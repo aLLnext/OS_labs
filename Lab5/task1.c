@@ -8,13 +8,8 @@
 #include <time.h>
 #include <zconf.h>
 
-//static clock_t t0;
-
-//static void start_timer() { t0 = clock(); }
-//
-//static double end_timer() { return (double)(clock() - t0) / CLOCKS_PER_SEC; } //находим разность по времени
-
 void start_timer();
+
 double end_timer();
 
 static void task1() {
