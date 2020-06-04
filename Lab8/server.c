@@ -94,9 +94,9 @@ int wait_request(int sockfd) {
 
 void interrupt_signal(int signal) {
   is_running = 0;
-  printf("Interrupt received: Server exit.");
+  printf("Interrupt received: Server exit.\n");
   close(master_socket);
-  return;
+  exit(EXIT_SUCCESS);
 }
 
 int main() {
@@ -163,6 +163,8 @@ int main() {
           perror("Server accept failed\n");
           exit(EXIT_FAILURE);
         }
+        fcntl(newfd, F_SETFL, O_NONBLOCK); //делаем соккет неблокирующимся
+
         FD_SET(newfd, &master); //добавляем новый сокет в сет
         if (newfd > fdmax) {
           fdmax = newfd;

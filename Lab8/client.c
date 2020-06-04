@@ -10,7 +10,7 @@
 #define MAXLINE 1023
 #define SA struct sockaddr
 
-int m2ain() {
+int main() {
   char buff[MAXLINE + 1];
   int sockfd, maxfd;
   fd_set all_set, rset; //дескрипторы для select
