@@ -6,6 +6,19 @@
          
 Код: [task1.c](https://github.com/sapiest/OS_labs/blob/master/Lab7/main.c)
 
-     
+
+На вход принимается строка.\
+На выходе стркока со измененным регистром.
+
+1. тест:\
+вход: "testT13 myTEST sISJdsougdWUhdeIWGHDSUDglIkhsjxdgw8ew"\
+выход: "TESTt13 MYtest SisjDSOUGDwuHDEiwghdsudGLiKHSJXDGW8EW"\
+2. тест:\
+вход: "test"\
+выход: "TEST"\
+3. тест:\
+вход: "udhiSLDhsnlajcmlkdsjskdlJWeulEIW"\
+выход: "UDHIsldHSNLAJCMLKDSJSKDLjwEULeiw"\
+
          
          
